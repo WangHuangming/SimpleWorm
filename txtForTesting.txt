@@ -1,0 +1,43 @@
+Notes for security!
+
+Secure Programs
+
+A program that is “secure” implies some degree of trust that it enforces confidentiality, integrity, and availability. As a programmer, we can look at its code and asses it’s security because 1) code is secure because it meets all the security requirements, 2) code is secure because it takes too long to break through security controls, and 3) code is secure if it has run for a long period of time w/o failure.
+
+Is it easy to ensure program security? No. Security often conflicts w/ usefulness and performance. It’s very hard to ensure a program does exactly what it does, nothing more. Programming and soft. engineering techniques change faster than security techniques. It costs money and time. Even the slightest flaw can have catastrophic consequences!
+
+Error: mistake in software program that may lead to a fault
+
+Fault: situation where the behavior of a program deviates from its intended behavior
+
+Failure: system malfunction caused by a fault
+
+Faults can be permanent (occur every time a program is executed) or transient (only occur sometimes). Transient faults are more difficult to diagnose because if you don’t get to them all of the time, you might not realize the fault is present.
+
+In general “security” of programs is assessed by the quantity and types of faults in code. The number of faults in requirements, design, and code inspections are tracked & used as indicators of the quality in the final product.
+
+Earlier, the paradigm of “penetrate and patch” was used where a team would create a test that attempts to cause the system to fail. If a system didn’t fail, it was considered secure. Otherwise, an effort is made to “patch” the system – BUT patches often introduced new faults!!
+
+Researchers started looking for a better way to make sure that code meets its security requirements. An option is to compare requirements w/ behavior. An unexcepted behavior is called a program security flaw. A vulnerability usually describes a class of flaws. It’s not enough to identify flaws but we must be able to prevent harm caused by possible flaws.
+
+A security flaw can be caused by malicious code or simply because the developer was sloppy or in a hurry. Flaws can therefore be separated into two categories: human errors vs malicious intentionally induced flaws.
+
+Non-Malicious Program Errors
+
+Being human means that we make mistakes. Programmers and developers make mistakes, most of which are unintentional and non-malicious. Three types of classic error types: 1) buffer overflows, 2) incomplete mediation, 2) time to check time of use errors.
+
+Buffer Overflow (stack overflow is a type)
+•	like trying to pour two gallons of water into a one-gallon pitcher
+•	buffer holds data that resides in memory, memory is finite & buffer’s capacity also finite
+•	buffer overflows when more data is inserted into a buffer than it can handle, causes unpredictability of what happens after
+•	programmer must declare buffer’s max size so compiler can reserve space
+•	in buffer attacks, data overflows to other memory locations
+•	if data flows to right memory location, attackers could have access to things that they normally wouldn’t have access to
+•	buffer attack is very difficult to implement, takes a lot of time to successfully carry out
+
+Buffer Overflow Example
+•	example in C
+o	char sample[10]
+•	what happens when you do: sample[10] = ‘E’;
+•	what happens when:
+•	check panels 11 & 12 to get the full example
